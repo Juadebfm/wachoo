@@ -1,0 +1,31 @@
+node_modules/
+dist/
+coverage/
+# Local AI/agent instructions, prompts, and state
+.agents/
+.claude/
+.codex/
+.cursor/
+.windsurf/
+.aider*
+# Brand source exports are kept locally; only app-used assets belong in app source.
+/brand-identity/
+# Local secrets and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+**/credentials*.json
+**/*service-account*.json
+*.sqlite
+*.sqlite3
+*.db
+.vercel/
+.DS_Store
+/apps/api/generated/
+/apps/api/src/generated/

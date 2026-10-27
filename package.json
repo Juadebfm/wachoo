@@ -1,0 +1,22 @@
+{
+  "name": "wachoo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "npm@11.9.0",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:web": "npm run build --workspace=@wachoo/shared && npm run dev --workspace=@wachoo/web",
+    "dev:api": "npm run build --workspace=@wachoo/shared && npm run dev --workspace=@wachoo/api",
+    "infra:up": "docker compose up -d",
+    "infra:down": "docker compose down",
+    "build": "npm run build --workspace=@wachoo/shared && npm run build --workspace=@wachoo/api && npm run build --workspace=@wachoo/web",
+    "typecheck": "npm run build --workspace=@wachoo/shared && npm run typecheck --workspace=@wachoo/api && npm run typecheck --workspace=@wachoo/web"
+  }
+}

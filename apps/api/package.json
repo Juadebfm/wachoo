@@ -1,0 +1,38 @@
+{
+  "name": "@wachoo/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "predev": "prisma generate",
+    "dev": "tsx watch src/index.ts",
+    "prebuild": "prisma generate",
+    "build": "tsc -p tsconfig.json",
+    "pretypecheck": "prisma generate",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "db:migrate:dev": "prisma migrate dev",
+    "db:migrate:deploy": "prisma migrate deploy",
+    "db:seed": "prisma db seed",
+    "db:import": "tsx prisma/import-categories.ts",
+    "admin:set-credentials": "tsx src/scripts/set-admin-credentials.ts"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.10.1",
+    "@prisma/client": "^7.10.1",
+    "@upstash/redis": "^1.40.0",
+    "@wachoo/shared": "0.1.0",
+    "argon2": "^0.45.1",
+    "dotenv": "^17.4.2",
+    "express": "^5.1.0",
+    "pg": "^8.23.1",
+    "redis": "^6.3.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^24.0.0",
+    "@types/pg": "^8.23.1",
+    "prisma": "^7.10.1",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.0"
+  }
+}
